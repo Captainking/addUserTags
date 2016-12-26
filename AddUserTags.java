@@ -32,23 +32,15 @@ public class AddUserTags {
 			double sports = sendweibo.get("体育") * 5 + likeweibo.get("体育") * 2.5 + commentweibo.get("体育") * 2.5;// 体育
 			double culture = sendweibo.get("文化") * 5 + likeweibo.get("文化") * 2.5 + commentweibo.get("文化") * 2.5;// 文化
 			double medicine = sendweibo.get("医药") * 5 + likeweibo.get("医药") * 2.5 + commentweibo.get("医药") * 2.5;// 医药
-			double total = economic + military + car + sports + culture + medicine;
+			double total = economic + military + car + sports + culture + medicine+0.0001;
 			Map<String, Double> userLable = new HashMap<String, Double>();
-			if (total > 0) {
-				userLable.put("经济", economic / total);
-				userLable.put("军事", military / total);
-				userLable.put("汽车", car / total);
-				userLable.put("体育", sports / total);
-				userLable.put("文化", culture / total);
-				userLable.put("医药", medicine / total);
-			} else {
-				userLable.put("经济", 0.0);
-				userLable.put("军事", 0.0);
-				userLable.put("汽车", 0.0);
-				userLable.put("体育", 0.0);
-				userLable.put("文化", 0.0);
-				userLable.put("医药", 0.0);
-			}
+			userLable.put("经济", economic / total);
+			userLable.put("军事", military / total);
+			userLable.put("汽车", car / total);
+			userLable.put("体育", sports / total);
+			userLable.put("文化", culture / total);
+			userLable.put("医药", medicine / total);
+
 			recommendDao.setUserLabels(userid, userLable);// 写进用户标签
 		}
 
