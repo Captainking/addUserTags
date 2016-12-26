@@ -50,6 +50,9 @@ public class AddUserTags {
 				userLable.put("医药", 0.0);
 			}
 			recommendDao.setUserLabels(userid, userLable);// 写进用户标签
+			sendWeiboidList.clear();
+			likeWeiboidList.clear();
+			commentWeiboidList.clear();
 		}
 
 	}
