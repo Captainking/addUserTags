@@ -32,7 +32,7 @@ public class AddUserTags {
 			double sports = sendweibo.get("体育") * 5 + likeweibo.get("体育") * 2.5 + commentweibo.get("体育") * 2.5;// 体育
 			double culture = sendweibo.get("文化") * 5 + likeweibo.get("文化") * 2.5 + commentweibo.get("文化") * 2.5;// 文化
 			double medicine = sendweibo.get("医药") * 5 + likeweibo.get("医药") * 2.5 + commentweibo.get("医药") * 2.5;// 医药
-			double total = economic + military + car + sports + culture + medicine;
+			double total = economic + military + car + sports + culture + medicine+0.0001;
 			Map<String, Double> userLable = new HashMap<String, Double>();
 			userLable.put("经济", economic / total);
 			userLable.put("军事", military / total);
